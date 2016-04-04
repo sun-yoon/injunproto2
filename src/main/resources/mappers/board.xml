@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	
+	
+	<select id="listAll" resultType="BoardVO">
+		<![CDATA[
+		  select b.boa_snum boa_snum, b.boa_imgpng boa_imgpng, b.boa_subject boa_subject, b.boa_context boa_context, b.boa_regdate boa_regdate, m.mem_snum mem_snum, m.mem_id mem_id, m.mem_profile mem_profile
+		 from board b, member m
+		 where b.boa_snum = 143 and b.mem_snum = m.mem_snum
+		 order by b.boa_snum desc, b.boa_regdate desc
+     
+		]]>
+	</select>
+	
+</mapper>
